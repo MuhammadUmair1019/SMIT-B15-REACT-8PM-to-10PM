@@ -1,17 +1,44 @@
-import Pass from './components/Pass';
-import Fail from './components/Fail'
+import Result from "./components/Result";
 
-// component
 function App() {
-  let marks = 80;
+  let students = [
+    {
+      name: "Ahmed",
+      marks: 60,
+      color: "green",
+    },
+    {
+      name: "Ali",
+      marks: 40,
+      color: "blue",
+    },
+    {
+      name: "Zubair",
+      marks: 30,
+      color: "red",
+    },
+    {
+      name: "Mujtaba",
+      marks: 80,
+      color: "green",
+    },
+  ];
 
-  if (marks > 50) {
-    return <Pass />;
-  } else {
-    return <Fail />;
-  }
+  return (
+    <>
+      {students.map((student, index) => (
+        <Result
+          key={index}
+          marks={student.marks}
+          color={student.color}
+          name={student.name}
+        />
+      ))}
+    </>
+  );
 }
 
+export default App;
 // --------------------------------------
 
 // function sum(a, b) {
@@ -111,4 +138,4 @@ function App() {
 //   )
 // }
 
-export default App;
+// export default App;
