@@ -6,15 +6,15 @@
 // 5) Show top 3 most expensive products
 // 6) Show all products with price labeled as (Below average or Above average)
 
-/* assignment
-1- hr after each result
-2- complete Fail component
-3- print grade of each student such that
+// Assignment
+// 1- hr after each result
+// 2- complete Fail component
+// 3- print grade of each student such that
 
-90 - 100 A
-80 - 90 B
-70 - 80 C
-60 - 70 D
-50 - 60 E
-below 50 - F
-*/
+// 90 - 100 A
+// 80 - 90 B
+// 70 - 80 C
+// 60 - 70 D
+// 50 - 60 E
+// below 50 - F
+
