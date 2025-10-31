@@ -27,10 +27,18 @@ function CounterApp() {
   return (
     <div>
       <h3>Quantity: {count}</h3>
-      <button onClick={handleIncrement}>+</button>
+      <button onClick={handleIncrement} disabled={count === 5}>
+        +
+      </button>
       <button onClick={handleDecrement} disabled={count === 1}>
         -
       </button>
+      <br />
+      {count === 5 && (
+        <small style={{ color: "red" }}>
+          You can not order more done 5 units
+        </small>
+      )}
     </div>
   );
 }

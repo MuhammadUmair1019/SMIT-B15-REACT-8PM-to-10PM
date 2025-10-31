@@ -1,7 +1,13 @@
-import CounterApp from "./components/class04/CounterApp";
+// import CounterApp from "./components/class04/CounterApp";
+import Class05 from "./components/class05";
 
 function App() {
-  return <CounterApp />;
+  return (
+    <>
+      <Class05 />
+      {/* <CounterApp /> */}
+    </>
+  );
 }
 
 export default App;
