@@ -1,5 +1,20 @@
 import { useState } from "react";
 
+function Class05() {
+  const [city, setCity] = useState("Karachi");
+
+  const handleChange = (e) => {
+    setCity(e.target.value)
+  };
+
+  return (
+    <>
+      <label>Name: </label>
+      <input type="text" value={city} onChange={handleChange} />
+    </>
+  );
+}
+
 // let user = {
 //   city: "ali",
 //   name: "",
@@ -11,43 +26,43 @@ import { useState } from "react";
 
 // console.log(user);
 
-function Class05() {
-  let [user, setUser] = useState({
-    city: "",
-    name: "",
-  });
+// function Class05() {
+//   let [user, setUser] = useState({
+//     city: "",
+//     name: "",
+//   });
 
-  function handleUpdate({ target: { name, value } }) {
-    setUser({ ...user, [name]: value });
-  }
+//   function handleUpdate({ target: { name, value } }) {
+//     setUser({ ...user, [name]: value });
+//   }
 
-  return (
-    <>
-      <label>Name: </label>
-      <input
-        type="text"
-        name="name"
-        value={user.name}
-        onChange={handleUpdate}
-      />
-      <br />
-      <br />
-      <label>City: </label>
-      <input
-        type="text"
-        name="city"
-        value={user.city}
-        onChange={handleUpdate}
-      />
+//   return (
+//     <>
+//       <label>Name: </label>
+//       <input
+//         type="text"
+//         name="name"
+//         value={user.name}
+//         onChange={handleUpdate}
+//       />
+//       <br />
+//       <br />
+//       <label>City: </label>
+//       <input
+//         type="text"
+//         name="city"
+//         value={user.city}
+//         onChange={handleUpdate}
+//       />
 
-      {user.name && user.city && (
-        <p>
-          City = {user.city} Name = {user.name}
-        </p>
-      )}
-    </>
-  );
-}
+//       {user.name && user.city && (
+//         <p>
+//           City = {user.city} Name = {user.name}
+//         </p>
+//       )}
+//     </>
+//   );
+// }
 
 // -------------------------------------------------------
 // function Class05() {
