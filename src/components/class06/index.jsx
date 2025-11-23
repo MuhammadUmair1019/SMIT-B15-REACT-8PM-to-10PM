@@ -1,13 +1,19 @@
-import { use, useState } from "react";
+import { useState } from "react";
 
 function CLass06() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
-  const [editId, setEditId] = useState("");
+  const [editId, setEditId] = useState(null);
 
   function handleAdd() {
     if (editId) {
-        // ??
+      setTodos(
+        todos.map((todo) =>
+          todo.id === editId ? { ...todo, text: newTodo } : todo
+        )
+      );
+      setEditId(null);
+      setNewTodo("");
     } else {
       setTodos([...todos, { id: Date.now(), text: newTodo }]);
       setNewTodo("");
@@ -54,5 +60,3 @@ function CLass06() {
 }
 
 export default CLass06;
-
-
