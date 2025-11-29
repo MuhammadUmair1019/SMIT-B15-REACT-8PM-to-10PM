@@ -1,0 +1,9 @@
+{
+  "posts": [
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 },
+    { "id": "3", "title": "another title", "views": 200 },
+    { "id": "4", "title": "another title", "views": 200 },
+    { "id": "5", "title": "another title", "views": 200 }
+  ]
+}
