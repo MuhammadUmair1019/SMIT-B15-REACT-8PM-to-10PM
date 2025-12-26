@@ -1,6 +1,7 @@
 // import { useState } from "react";
 
 import Axios from "./components/Axios";
+import Supabase from "./components/Supabase";
 import TankStackQuery from "./components/TankStackQuery";
 // import UseRefHook from "./components/UseRefHook";
 
@@ -18,7 +19,8 @@ function App() {
 
   return (
     <>
-      <TankStackQuery />
+      <Supabase />
+      {/* <TankStackQuery /> */}
       {/* <Axios /> */}
       {/* <UseRefHook /> */}
       {/* <MemoizeHook /> */}
