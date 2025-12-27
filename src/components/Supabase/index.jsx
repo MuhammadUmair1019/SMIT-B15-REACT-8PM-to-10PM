@@ -6,9 +6,14 @@ import {
   useQuery,
   useQueryClient,
 } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 
-const getTodos = async () => {
-  const { data } = await supabase.from("todos").select("*");
+const getTodos = async (userId) => {
+  const { data } = await supabase
+    .from("todos")
+    .select("*")
+    .eq("user_id", userId)
+    .order("created_at", { ascending: false });
 
   return data;
 };
@@ -31,16 +36,18 @@ const updateTodo = async (payload) => {
     .eq("id", id);
 };
 
-function Supabase() {
+function Supabase({ user }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [editingId, setEditingId] = useState("");
 
+  const navigate = useNavigate();
   const queryClient = useQueryClient();
 
+  console.log("user", user);
   const { data: todos, isLoading } = useQuery({
     queryKey: ["todos"],
-    queryFn: getTodos,
+    queryFn: () => getTodos(user?.id),
   });
 
   const createTodoMutation = useMutation({
@@ -70,6 +77,17 @@ function Supabase() {
     setEditingId("");
   };
 
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+      console.log(error);
+      return;
+    }
+
+    navigate("/login");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -84,6 +102,7 @@ function Supabase() {
         {
           ...payload,
           id: editingId,
+          user_id: user?.id,
         },
         editingId
       );
@@ -99,6 +118,14 @@ function Supabase() {
   return (
     <div>
       <h1>Hello, React</h1>
+      <div className="flex ">
+        <button
+          onClick={handleLogout}
+          className="w-25 ml-auto mr-2.5 cursor-pointer bg-red-600 text-white py-2 rounded hover:bg-red-700"
+        >
+          Logout
+        </button>
+      </div>
 
       <form onSubmit={handleSubmit} className="max-w-6xl p-4" action="">
         <label className="block text-lg font-semibold text-gray-700">
