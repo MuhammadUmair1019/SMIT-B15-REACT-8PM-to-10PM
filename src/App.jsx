@@ -44,6 +44,9 @@ import CustomHookDemo from "./demos/08-custom-hooks/Custom-Hook-Demo";
 // Demo Components - Advanced
 import CalculatorDemo from "./demos/09-advanced/Calculator-Demo";
 
+// Demo Components - Real-time Chat
+import ChatApp from "./demos/10-realtime-chat/ChatApp";
+
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -77,12 +80,20 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
 
-      {/* Protected Route */}
+      {/* Protected Routes */}
       <Route
         path="/todos"
         element={
           <PrivateRoute user={user}>
             <SupabaseTodos user={user} />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/chat"
+        element={
+          <PrivateRoute user={user}>
+            <ChatApp user={user} />
           </PrivateRoute>
         }
       />

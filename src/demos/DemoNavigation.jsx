@@ -79,6 +79,13 @@ function DemoNavigation() {
         { name: "Calculator", path: "/demo/calculator" },
       ],
     },
+    {
+      title: "10. Real-time Chat App",
+      description: "Complete End-to-End Application",
+      demos: [
+        { name: "Chat Application", path: "/chat" },
+      ],
+    },
   ];
 
   return (
@@ -145,6 +152,12 @@ function DemoNavigation() {
               className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
             >
               Protected Todos (Requires Login)
+            </Link>
+            <Link
+              to="/chat"
+              className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
+            >
+              Real-time Chat App (Requires Login)
             </Link>
           </div>
         </div>
