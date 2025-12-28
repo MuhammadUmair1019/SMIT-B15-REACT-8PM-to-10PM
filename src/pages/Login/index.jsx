@@ -48,8 +48,10 @@ export default function Login() {
         />
 
         <p className="mb-3">
-          Don't have an account
-          <Link to="/signup" className="text-blue-400"> Signup</Link>
+          Don't have an account?{" "}
+          <Link to="/signup" className="text-blue-400 hover:underline">
+            Sign Up
+          </Link>
         </p>
 
         <button

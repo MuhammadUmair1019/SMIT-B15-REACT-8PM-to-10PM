@@ -51,9 +51,8 @@ export default function Signup() {
         />
 
         <p className="mb-3">
-          Already have an account
-          <Link to="/Login" className="text-blue-400">
-            {" "}
+          Already have an account?{" "}
+          <Link to="/login" className="text-blue-400 hover:underline">
             Login
           </Link>
         </p>
